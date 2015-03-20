@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: leozdgao的博客
-subtitle: 司职后端的前端工程师
+title: Leo.Gao
+subtitle: 不积跬步无以至千里
 description:
 author: Leo Gao
 language: zh-CN
@@ -64,9 +64,13 @@ pagination_dir: page
 ## Themes: http://hexo.io/themes/
 # theme: landscape
 theme: light
+plugins:
+- hexo-generator-feed
+- hexo-generator-sitemap
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
   repo: https://github.com/leozdgao/leozdgao.github.io.git
+
