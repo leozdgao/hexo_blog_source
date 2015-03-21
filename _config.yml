@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://leozdgao.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -45,6 +45,9 @@ highlight:
 # Category & Tag
 default_category: uncategorized
 category_map:
+	JS类库探索: jslibs
+	操作系统基础: os
+	计算机网络基础: net
 tag_map:
 
 # Date / Time format
