@@ -23,9 +23,9 @@ js中的假值（falsy）：false,0,null,undefined,'',NaN
 089 // 89
 012.345 // SyntaxError: Unexpected number
 ```
- 
+
 `ParseInt`方法会试着解析一个整形数字
- 
+
 ```
 parseInt(012) // 10
 parseInt(012, 10) // 10
@@ -33,7 +33,7 @@ parseInt(012, 8) // 8
 parseInt("123Test") // 123
 parseInt({}) // NaN
 ```
- 
+
 将数字以0开头并试着将它认为是8进制数不是个好的做法，ES6中有八进制数字面量表示法：`0o12`
 
 下面是NaN表现出的一些奇怪行为，要检测NaN应该使用方法`isNaN()`。
