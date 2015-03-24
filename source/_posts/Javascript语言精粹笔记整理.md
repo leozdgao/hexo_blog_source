@@ -153,7 +153,7 @@ function Animal() {
 
 function Cat(name) {
     var that = Animal();
-    that = name || "Cat";    
+    that.name = name || "Cat";    
 
     return that;
 }
@@ -164,3 +164,17 @@ var cat = Cat("kitty");
 这种方法不需要使用new操作符，也不涉及到原型，还可以通过各种闭包来保存私有的状态。
 
 我个人还是会更倾向于写伪类继承的模式，可能是后端出身的关系，觉得其更符合我的思维方式。不过函数化模式更多是用于保存私用的状态，主要不太会用它实现继承。
+
+看到过如下的一种做法：
+
+```
+var SkyScroll = function(opts) { return new SkyScroll.prototype.init(opts); }
+SkyScroll.prototype = {
+  init: function(opts) {},
+  // other methods
+};
+SkyScroll.prototype.init.prototype = SkyScroll.prototype;
+window.SkyScroll = SkyScroll;
+```
+
+这种方法说不上和继承有关系，不过有一定特点，就是不论你使用`var a = SkyScroll({})`还是用new操作符调用构造器`var b = new SkyScroll({})`返回的结果都是相同的，不会因为使用函数调用模式调用构造器而污染全局环境，使用构造器模式调用返回的为一个对象，这个对象可以被正常返回，所以这两种方式都可以成功构造一个SkyScroll对象。
