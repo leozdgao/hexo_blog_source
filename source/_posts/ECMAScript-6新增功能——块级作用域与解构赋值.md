@@ -1,12 +1,12 @@
 title: "ECMAScript 6新增功能——块级作用域与解构赋值"
 date: 2015-03-23 22:15:44
-tags: javascript, ES6
+tags: [javascript, ES6]
 categories: Javascript基础
 ---
 
 根据[ECMAScript 6入门](http://es6.ruanyifeng.com/)学习了ES6的一些新特性，在io.js v1.61版本进行代码测试，部分代码需要打开了`--harmony`，`--use_strict`等flag。
 
-本文将有如下内容
+这个系列将将会有如下内容
 - let , const以及块级作用域
 - 变量的解构赋值
 - 新增的方法
@@ -14,6 +14,8 @@ categories: Javascript基础
 - Generator函数
 - Promise对象
 - Class和Module
+
+<!-- more -->
 
 ## let , const以及块级作用域
 
@@ -120,20 +122,19 @@ var {foo,bar="dog"} = {};  // foo = undefined, bar = "dog"
 
 **用途：**（这部分照抄了原文，觉得很有道理，不过鉴于io.js暂时不支持该特性，并未实践过如下用途）
 
-1. 交换变量的值
+**交换变量的值**
 ```
 [x, y] = [y, x]
 ```
 
-2. 函数返回多个值
+**函数返回多个值**
 ```
 // 返回一个数组
 function example() {
     return [1, 2, 3];
 }
 var [a, b, c] = example();
-```
-```
+
 // 返回一个对象
 function example() {
   return {
@@ -144,7 +145,7 @@ function example() {
 var { foo, bar } = example();
 ```
 
-3. 函数参数的定义及设置默认值（合并了原文中的3和4）
+**函数参数的定义及设置默认值**（合并了原文中的3和4）
 ```
 jQuery.ajax = function (url, {
     async = true,
@@ -158,26 +159,24 @@ jQuery.ajax = function (url, {
     };
 ```
 
-4. 遍历Map结构
+**遍历Map结构**
 ```
-    var map = new Map();
-    map.set('first', 'hello');
-    map.set('second', 'world');
-    
-    for (let [key, value] of map) {
-       console.log(key + " is " + value);
-    }
-```
-一些技巧
-```
-// 获取键名
-for (let [key] of map) {
-  // ...
-} 
-// 获取键值
-for (let [,value] of map) {
-  // ...
-}
+  var map = new Map();
+  map.set('first', 'hello');
+  map.set('second', 'world');
+  
+  for (let [key, value] of map) {
+     console.log(key + " is " + value);
+  }
+  
+  // 获取键名
+  for (let [key] of map) {
+    // ...
+  } 
+  // 获取键值
+  for (let [,value] of map) {
+    // ...
+  }
 ```
 
 
