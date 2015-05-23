@@ -15,16 +15,12 @@ var width = rect.right - rect.left;
 
 
 | 属性 | 说明 |
-
 |------------|-----------------------------------------------------|
-
 | clientHeight / clientWidth | 用户可见高度 / 宽度（元素的padding-box高度 / 宽度 - 滚动条宽度）|
-
 | scrollHeight / scrollWidth | 元素的内容高度 / 宽度（包括元素的溢出部分）+padding |
-
 | offsetHeight / offsetWidth | 元素的border-box高度 / 宽度（包括元素的padding+border+滚动条+正文高度 / 宽度）|
 
-
+<!-- more -->
 
 其中`scrollWidth`或者`scrollHeight`由于各浏览器滚动条实现的差异，可能会出现返回值不同的情况
 
@@ -41,13 +37,9 @@ Firefox及IE8+（不限于）
 **jQuery中获取元素尺寸的方法**
 
 | 方法 | 说明 |
-
 |------------|-----------------------------------------------------|
-
 | innerWidth() / innerHeight() | 获取元素padding-box的尺寸 |
-
 | width() / height() | 根据元素的box-sizing的设置返回相应box的尺寸 |
-
 | outerWidth(includeMargin) / outerHeight(includeMargin) | includeMargin为true时则返回margin-box的尺寸，includeMargin为false则返回border-box的尺寸，includeMargin默认值为false|
 
 
@@ -117,30 +109,20 @@ element.scrollHeight - element.scrollTop == element.clientHeight;
 
 
 | 属性 | 说明 |
-
 |------------|-----------------------------------------------------|
-
 | clientTop（get） | 元素的border-top-width |
-
 | clientLeft（get） | 元素的border-left-width，如果text-direction为rtl，则还需要算上出现的垂直滚动条的宽度 |
-
 | scrollTop（get / set） | 元素正文上方被卷去的（scrolled）高度 |
-
 | scrollLeft（get / set） | 元素正文左边被卷去的（scrolled）高度 |
-
 | offsetTop（get） | 元素border-box的上边缘到其父元素margin-box的上边缘的宽度 |
-
 | offsetLeft（get） | 元素border-box的左边缘到其父元素margin-box的左边缘的宽度 |
 
 
 `element.offsetParent`返回的是离element最近的containing element或者说是element的父元素，如果element或其中一个上级元素的样式为`display:none`，则该属性返回`null`
 
 | 属性 | 说明 |
-
-|------------|------------------------------------|
-
+|-----------|------------------------------------|
 | window.scrollX（pageXOffset ） | 整个文档被水平滚动了的宽度 |
-
 | window.scrollY（pageYOffset） | 整个文档被垂直滚动了的宽度 |
 
 
